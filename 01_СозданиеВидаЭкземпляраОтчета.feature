@@ -802,17 +802,17 @@
 
 		И Я добавляю значения с раскрытием показателей в ячейку 'R22C2'
 			| "VA0ProCate"           | "VA0Product"                | "VA0Counter"      | "VA0Contrac"  | "VA0CFItems"                       | 'Значение'    |
-			| "Software products" | "5C:Corporate performance management" | "LLC \"Ganymede\"" | "Ganymede-001" | "Software sale" | '5,000.00000' |
+			| "Software products" | "5C:Corporate performance management" | "LLC \"Ganymede\"" | "Ganymede-001" | "3Software sale" | '5,000.00000' |
 
 		И Я добавляю значения с раскрытием показателей в ячейку 'R28C2'
 			| "VA0ProCate"           | "VA0Product"                | "VA0Counter"      | "VA0Contrac"  | "VA0CFItems"                       | "VA0IEItems"                       | 'Значение'    |
-			| "Software products" | "5C:Corporate performance management" | "LLC \"Ganymede\"" | "Ganymede-001" | "Software sale" | "Software sale" | '6,000.00000' |
+			| "Software products" | "5C:Corporate performance management" | "LLC \"Ganymede\"" | "Ganymede-001" | "3Software sale" | "3Software sale" | '6,000.00000' |
 
 		И Я добавляю значения с раскрытием показателей в ячейку 'R35C2'
 			| "VA0ProCate"           | "VA0Product"                | "VA0Counter"      | "VA0Contrac"  | "VA0CFItems"                       | "VA0IEItems"                       | 'АналитикаВалюта' | 'Значение'    |
-			| "Software products" | "5C:Corporate performance management" | "LLC \"Ganymede\"" | "Ganymede-001" | "Software sale" | "Software sale" | 'RUB'             | '1,100.00000' |
-			| "Software products" | "5C:Corporate performance management" | "LLC \"Ganymede\"" | "Ganymede-001" | "Software sale" | "Software sale" | 'USD'             | '1,200.00000' |
-			| "Software products" | "5C:Corporate performance management" | "LLC \"Ganymede\"" | "Ganymede-001" | "Software sale" | "Software sale" | 'EUR'             | '1,300.00000' |
+			| "Software products" | "5C:Corporate performance management" | "LLC \"Ganymede\"" | "Ganymede-001" | "3Software sale" | "3Software sale" | 'RUB'             | '1,100.00000' |
+			| "Software products" | "5C:Corporate performance management" | "LLC \"Ganymede\"" | "Ganymede-001" | "3Software sale" | "3Software sale" | 'USD'             | '1,200.00000' |
+			| "Software products" | "5C:Corporate performance management" | "LLC \"Ganymede\"" | "Ganymede-001" | "3Software sale" | "3Software sale" | 'EUR'             | '1,300.00000' |
 
 	* Запомним заголовок окна
 		И Открылся экземпляр отчета для вида отчета "VA - Manual entry for all analytics" валюта 'RUB' организация "Mercury LLC" сценарий "VA - Main scenario" периодичность "Month" проект "VA - Main project" аналитики '' '' '' '' '' ''
@@ -1731,7 +1731,7 @@
 			Когда открылось окно "Drill down indicators*"
 			Тогда таблица 'РаскрытиеПоказателей' стала равной:
 				| "Cash flow items"                       | "Income and expense items"        | 'Значение' |
-				| "Software sale" | "Software sale" | '800,000'  |
+				| "3Software sale" | "3Software sale" | '800,000'  |
 			И я нажимаю на кнопку с именем 'ФормаОтменить'
 		* Второй показатель	
 			Тогда открылось окно '$ЗаголовокОкна$'
@@ -1742,7 +1742,7 @@
 			Когда открылось окно "Drill down indicators*"
 			Тогда таблица 'РаскрытиеПоказателей' стала равной:
 				| "Cash flow items"                       | 'Значение'  |
-				| "Software sale" | '1,600,000' |
+				| "3Software sale" | '1,600,000' |
 			И я нажимаю на кнопку с именем 'ФормаОтменить'
 		* Отменяем измененное значение
 			Когда открылось окно '$ЗаголовокОкна$'
@@ -1752,7 +1752,7 @@
 			Тогда открылось окно "Drill down indicators*"
 			Тогда таблица 'РаскрытиеПоказателей' стала равной:
 				| "Cash flow items"                       | 'Значение' |
-				| "Software sale" | '960,000'  |
+				| "3Software sale" | '960,000'  |
 			И я нажимаю на кнопку с именем 'ФормаОтменить'
 		* Показатель с валютной аналитикой
 			Когда открылось окно '$ЗаголовокОкна$'

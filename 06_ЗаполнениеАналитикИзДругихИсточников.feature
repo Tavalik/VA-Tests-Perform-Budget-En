@@ -59,8 +59,8 @@
 		* Товарные категории
 			И Я добавляю значения с раскрытием показателей в ячейку 'R6C2'
 				| "VA0CFItems"                       | 'Значение' |
-				| "Software sale" | '1.00000'  |
-				| "Software implementation"  | '2.00000'  |
+				| "3Software sale" | '1.00000'  |
+				| "2Software implementation"  | '2.00000'  |
 			И Я ввожу значение '1.00000' в ячейку 'R7C3'
 			И Я ввожу значение '2.00000' в ячейку 'R8C3'
 		* Товары
@@ -229,7 +229,7 @@
 				И я нажимаю на кнопку с именем 'ФормаНайти'
 				Тогда открылась форма с именем 'UniversalListFindExtForm'
 				И из выпадающего списка с именем 'FieldSelector' я выбираю точное значение "Description"
-				И в поле с именем 'Pattern' я ввожу текст "Software upgrade"
+				И в поле с именем 'Pattern' я ввожу текст "1Software upgrade"
 				И я меняю значение переключателя с именем 'CompareType' на "Exact match"
 				И я нажимаю на кнопку с именем 'Find'
 				Тогда открылось окно "Cash flow items"
@@ -442,7 +442,7 @@
 			| "4C:Enterprise 8.3 CORP. Server License (x86-64) "           | '5'              | '5'               | '5'            | '15'         |
 			| "3C:Enterprise 8 CORP. Client license for 100 users " | '5'              | '5'               | '5'            | '15'         |
 			| "Analyst transformation"                                          | '6'              | '12'              | '18'           | '36'         |
-			| "Software upgrade "                                  | '6'              | '12'              | '18'           | '36'         |
+			| "1Software upgrade "                                  | '6'              | '12'              | '18'           | '36'         |
 			| "5C:Corporate performance management "                                      | '2'              | '4'               | '6'            | '12'         |
 			| "4C:Enterprise 8.3 CORP. Server License (x86-64) "           | '1'              | '2'               | '3'            | '6'          |
 			| "3C:Enterprise 8 CORP. Client license for 100 users " | '3'              | '6'               | '9'            | '18'         |
@@ -451,16 +451,16 @@
 			| "5C:Corporate performance management "                                      | '0'              | '0'               | '3'            | '3'          |
 			| "4C:Enterprise 8.3 CORP. Server License (x86-64) "           | '0'              | '0'               | '3'            | '3'          |
 			| "3C:Enterprise 8 CORP. Client license for 100 users " | '0'              | '0'               | '3'            | '3'          |
-			| "Software implementation "                                | '3'              | '6'               | '0'            | '9'          |
+			| "2Software implementation "                                | '3'              | '6'               | '0'            | '9'          |
 			| "5C:Corporate performance management "                                      | '1'              | '2'               | '0'            | '3'          |
 			| "4C:Enterprise 8.3 CORP. Server License (x86-64) "           | '1'              | '2'               | '0'            | '3'          |
 			| "3C:Enterprise 8 CORP. Client license for 100 users " | '1'              | '2'               | '0'            | '3'          |
-			| "Software sale "                               | '3'              | '6'               | '0'            | '9'          |
+			| "3Software sale "                               | '3'              | '6'               | '0'            | '9'          |
 			| "5C:Corporate performance management "                                      | '1'              | '2'               | '0'            | '3'          |
 			| "4C:Enterprise 8.3 CORP. Server License (x86-64) "           | '1'              | '2'               | '0'            | '3'          |
 			| "3C:Enterprise 8 CORP. Client license for 100 users " | '1'              | '2'               | '0'            | '3'          |
 			| "Recalculation in code"                                                 | '4,500,000'      | '4,500,000'       | '4,661,400'    | '13,661,400' |
-			| "Software upgrade "                                  | '4,500,000'      | '4,500,000'       | '4,661,400'    | '13,661,400' |
+			| "1Software upgrade "                                  | '4,500,000'      | '4,500,000'       | '4,661,400'    | '13,661,400' |
 			| "5C:Corporate performance management "                                      | '1,500,000'      | '1,500,000'       | '1,553,800'    | '4,553,800'  |
 			| "4C:Enterprise 8.3 CORP. Server License (x86-64) "           | '1,500,000'      | '1,500,000'       | '1,553,800'    | '4,553,800'  |
 			| "3C:Enterprise 8 CORP. Client license for 100 users " | '1,500,000'      | '1,500,000'       | '1,553,800'    | '4,553,800'  |
