@@ -58,17 +58,17 @@
 	* Вводим значения показателей
 		* Товарные категории
 			И Я добавляю значения с раскрытием показателей в ячейку 'R6C2'
-				| "VA0CFItems"                       | 'Значение' |
-				| "3Software sale" | '1.00000'  |
-				| "2Software implementation"  | '2.00000'  |
+				| "VA0CFItems"                       | 'Значение1' |
+				| "3Software sale" | '1.00000'   |
+				| "2Software implementation"  | '2.00000'   |
 			И Я ввожу значение '1.00000' в ячейку 'R7C3'
 			И Я ввожу значение '2.00000' в ячейку 'R8C3'
 		* Товары
 			И Я добавляю значения с раскрытием показателей в ячейку 'R9C2'
-				| "VA0Product"                                                     | 'Значение' |
-				| "4C:Enterprise 8.3 CORP. Server License (x86-64)"           | '1.00000'  |
-				| "3C:Enterprise 8 CORP. Client license for 100 users" | '3.00000'  |
-				| "5C:Corporate performance management"                                      | '2.00000'  |
+				| "VA0Product"                                                     | 'Значение1' |
+				| "4C:Enterprise 8.3 CORP. Server License (x86-64)"           | '1.00000'   |
+				| "3C:Enterprise 8 CORP. Client license for 100 users" | '3.00000'   |
+				| "5C:Corporate performance management"                                      | '2.00000'   |
 			И в табличном документе 'ПолеТабличногоДокументаМакет' я перехожу к ячейке 'R10C2:R12C2'
 			И я нажимаю на кнопку с именем 'ПолеТабличногоДокументаМакетСкопироватьДанныеПоСтроке'
 			И я изменяю значение на '100.00000' процентов в ячейке 'R10C3:R12C3'
@@ -198,7 +198,7 @@
 				Когда открылось окно "Data sources"
 				И в таблице 'Список' я перехожу к строке:
 					| "Description"                                          | "Receipt method"                                 | "Infobase type"                      | "Indicator filter"  |
-					| "VA - Data to add analytics_Goods quantity" | "Current infobase report indicator (easy setup)" | "Current infobase" | "Goods quantity" |
+					| "VA - Data to add analytics_Goods quantity" | "Current infobase report indicator (easy setup)" | 'Текущая информационная база' | "Goods quantity" |
 				И в таблице 'Список' я выбираю текущую строку				
 				Тогда открылось окно "Data source (create)*"
 				И я нажимаю на кнопку с именем 'ФормаЗаписатьИЗакрыть'

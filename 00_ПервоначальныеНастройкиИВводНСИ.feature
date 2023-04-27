@@ -70,15 +70,15 @@
 		И Я создаю страну с кодом1 '643' кодом2 'RU' кодом3 'RUS' именем1 "Russia" именем2 "The Russian Federation" именем3 "The Russian Federation" если ее нет в 1C:CPMWE
 
 	* Настроим аналитику 'Валюта'	
-		И В командном интерфейсе я выбираю "Budgeting, reporting, and analysis" "Dimension kinds (corporate)"
-		Тогда открылось окно "Dimension kinds (corporate)"
+		И В командном интерфейсе я выбираю "Budgeting, reporting, and analysis" "Dimension types (corporate)"
+		Тогда открылось окно "Dimension types (corporate)"
 		И я нажимаю на кнопку с именем 'ФормаНайти'
 		Тогда открылась форма с именем 'UniversalListFindExtForm'
 		И из выпадающего списка с именем 'FieldSelector' я выбираю точное значение "Description"
 		И в поле с именем 'Pattern' я ввожу текст 'Валюты'
 		И я меняю значение переключателя с именем 'CompareType' на "Exact match"
 		И я нажимаю на кнопку с именем 'Find'
-		Тогда открылось окно "Dimension kinds (corporate)"
+		Тогда открылось окно "Dimension types (corporate)"
 		Если в таблице 'Список' количество строк 'равно' 0 Тогда
 			И я нажимаю на кнопку с именем 'ФормаНайти'
 			Тогда открылась форма с именем 'UniversalListFindExtForm'
@@ -86,12 +86,12 @@
 			И в поле с именем 'Pattern' я ввожу текст "Currencies"
 			И я меняю значение переключателя с именем 'CompareType' на "Exact match"
 			И я нажимаю на кнопку с именем 'Find'
-			Тогда открылось окно "Dimension kinds (corporate)"
+			Тогда открылось окно "Dimension types (corporate)"
 		И в таблице 'Список' я выбираю текущую строку
-		Когда открылось окно '* (Dimension kinds (corporate))'
+		Когда открылось окно '* (Dimension types (corporate))'
 		И в поле с именем 'Наименование' я ввожу текст "Currencies"
 		И я нажимаю на кнопку с именем 'ФормаЗаписать'
-		Тогда открылось окно "Currencies (Dimension kinds (corporate))"
+		Тогда открылось окно "Currencies (Dimension types (corporate))"
 		Если в таблице 'ТабличноеПолеРеквизиты' есть строка Тогда
 			| "Attribute"       | "Key" | "Template" |
 			| "Alphabetic code" | "No"  | "No"   |
@@ -100,7 +100,7 @@
 				| "Alphabetic code" | "No"  | "No"   |
 			И в таблице 'ТабличноеПолеРеквизиты' я изменяю флаг с именем 'ТаблицаРеквизитовКлюч'
 		И я нажимаю на кнопку с именем 'ФормаЗаписатьИЗакрыть'
-		И я жду закрытия окна 'Валюты (Dimension kinds (corporate)) *' в течение 20 секунд
+		И я жду закрытия окна 'Валюты (Dimension types (corporate)) *' в течение 20 секунд
 
 	* Отключаем работу с новостями
 		Если '$$ЭтоЕРПУХ$$' Тогда
@@ -147,7 +147,8 @@
 		И Я для организации "Venus LLC" для реквизита 'Родитель' выбираю значение "System LLC"
 		
 		Если '$$ЭтоУХ$$' Тогда
-			И Я для организации "Venus LLC" для реквизита 'ВидОрганизации' выбираю значение "VA - Package CFR"
+			Если 'НЕ $$ЭтоPerform$$' Тогда
+				И Я для организации "Venus LLC" для реквизита 'ВидОрганизации' выбираю значение "VA - Package CFR"
 		ИначеЕсли '$$ЭтоЕРПУХ$$' Тогда
 			И Я для организации "Venus LLC" для реквизита 'ВидОрганизации1' выбираю значение "VA - Package CFR"
 
@@ -161,7 +162,8 @@
 		И Я для организации "Earth LLC" для реквизита 'Родитель' выбираю значение "System LLC"
 		
 		Если '$$ЭтоУХ$$' Тогда
-			И Я для организации "Earth LLC" для реквизита 'ВидОрганизации' выбираю значение "VA - Package CFR"
+			Если 'НЕ $$ЭтоPerform$$' Тогда
+				И Я для организации "Earth LLC" для реквизита 'ВидОрганизации' выбираю значение "VA - Package CFR"
 		ИначеЕсли '$$ЭтоЕРПУХ$$' Тогда
 			И Я для организации "Earth LLC" для реквизита 'ВидОрганизации1' выбираю значение "VA - Package CFR"
 
@@ -171,18 +173,14 @@
 			И Я для организации "Earth LLC" для реквизита 'ГруппаКонтрагентов' выбираю значение "VA - Subsidiary"
 		
 	* Создаем организацию Марс
-		И Я создаю организацию с именем "Mars LLC" типом 'ВыбратьЦФО' видом '' налогооблажением ''
+		И Я создаю организацию с именем "Mars LLC" типом 'ВыбратьЦФО' видом 'ВыбратьЭл' налогооблажением ''
 		И Я для организации "Mars LLC" для реквизита 'Родитель' выбираю значение "System LLC"
 		
 		Если '$$ЭтоУХ$$' Тогда
-			И Я для организации "Mars LLC" для реквизита 'ВидОрганизации' выбираю значение "VA - Package CFR"
+			Если 'НЕ $$ЭтоPerform$$' Тогда
+				И Я для организации "Mars LLC" для реквизита 'ВидОрганизации' выбираю значение "VA - Package CFR"
 		ИначеЕсли '$$ЭтоЕРПУХ$$' Тогда
 			И Я для организации "Mars LLC" для реквизита 'ВидОрганизации1' выбираю значение "VA - Package CFR"
-
-		Если '$$ЭтоPerform$$' Тогда	
-			И Я для организации "Mars LLC" для реквизита 'ГруппаКонтрагента' выбираю значение "VA - Subsidiary"
-		Иначе			
-			И Я для организации "Mars LLC" для реквизита 'ГруппаКонтрагентов' выбираю значение "VA - Subsidiary"
 
 Сценарий: 00.05 Создание Сценария
 
@@ -233,12 +231,12 @@
 	* Выбираем группу видов отчетов	
 		Тогда открылось окно '$ЗаголовокОкна$'
 		И я нажимаю кнопку выбора у поля с именем 'ВидОтчета'
-		Тогда открылось окно "Report kinds"
+		Тогда открылось окно "Report types"
 		И я выбираю пункт контекстного меню с именем 'СписокКонтекстноеМенюНайти' на элементе формы с именем 'Список'
 		Тогда открылась форма с именем 'UniversalListFindExtForm'
 		И в поле с именем 'Pattern' я ввожу текст "VA - Report group"
 		И я нажимаю на кнопку с именем 'Find'
-		Тогда открылось окно "Report kinds"
+		Тогда открылось окно "Report types"
 		И в таблице 'Список' я активизирую поле с именем 'Наименование'
 		И в таблице 'Список' я выбираю текущую строку
 	
@@ -254,21 +252,21 @@
 		И из выпадающего списка с именем 'Pattern' я выбираю по строке "System LLC"
 		И я нажимаю на кнопку с именем 'Find'	
 		Тогда открылось окно '$ЗаголовокОкна$'
-		И я нажимаю на кнопку с именем 'ОрганизационныеЕдиницыКопироватьСИерархией'				
+		И я нажимаю на кнопку с именем 'ОрганизационныеЕдиницыКопироватьСИерархией'	
 
 	* Развернем группы
 		Когда открылось окно '$ЗаголовокОкна$'
 		И в таблице 'СтруктураГруппы' я перехожу к строке:
-			| "Consolidating company\n/ Business unit" | "Intercompany transactions exclusion method" | "Relation to group" | "Effective share, %" |
+			| "Consolidating company\n/ Business unit" | "Intercompany transactions exclusion method" | "Company status for consolidation" | "Effective share, %" |
 			| "System LLC"                                            | '- '                   | "Group"             | '- '                  |
 		И в таблице 'СтруктураГруппы' я разворачиваю текущую строку
 
 	* Установим валюту, если необходимо		
 		Если в таблице 'СтруктураГруппы' есть строка Тогда
-			| "Consolidating company\n/ Business unit" | "Intercompany transactions exclusion method" | "Primary currency" | "Relation to group" | "Effective share, %" |
+			| "Consolidating company\n/ Business unit" | "Intercompany transactions exclusion method" | "Primary currency" | "Company status for consolidation" | "Effective share, %" |
 			| "System LLC"                                            | '- '                   | ''                | "Group"             | '- '                  |
 			И в таблице 'СтруктураГруппы' я перехожу к строке:
-				| "Consolidating company\n/ Business unit" | "Intercompany transactions exclusion method" | "Primary currency" | "Relation to group" | "Effective share, %" |
+				| "Consolidating company\n/ Business unit" | "Intercompany transactions exclusion method" | "Primary currency" | "Company status for consolidation" | "Effective share, %" |
 				| "System LLC"                                            | '- '                   | ''                | "Group"             | '- '                  |
 			И в таблице 'СтруктураГруппы' я активизирую поле с именем 'СтруктураГруппыВалюта'
 			И в таблице 'СтруктураГруппы' я выбираю текущую строку
@@ -283,55 +281,61 @@
 			И в таблице 'СтруктураГруппы' я выбираю текущую строку
 			И в таблице 'СтруктураГруппы' из выпадающего списка с именем 'СтруктураГруппыВалюта' я выбираю точное значение 'RUB'
 		Если в таблице 'СтруктураГруппы' есть строка Тогда
-			| "Company kind" | "Consolidating company\n/ Business unit" | "Primary currency" | "Intercompany transactions exclusion method" | "Relation to group" | "Effective share, %" |
-			| "VA - Package CFR"  | "Venus LLC"                                             | ''                | "CFR"                  | 'ЦФО'                | '100'                 |
+			| "Consolidating company\n/ Business unit" | "Primary currency" | "Intercompany transactions exclusion method" | "Company status for consolidation" | "Effective share, %" |
+			| "Venus LLC"                                             | ''                | "Financial responsibility center"                  | "Financial responsibility center"                | '100'                 |
 			И в таблице 'СтруктураГруппы' я перехожу к строке:
-				| "Company kind" | "Consolidating company\n/ Business unit" | "Primary currency" | "Intercompany transactions exclusion method" | "Relation to group" | "Effective share, %" |
-				| "VA - Package CFR"  | "Venus LLC"                                             | ''                | "CFR"                  | 'ЦФО'                | '100'                 |
+				| "Consolidating company\n/ Business unit" | "Primary currency" | "Intercompany transactions exclusion method" | "Company status for consolidation" | "Effective share, %" |
+				| "Venus LLC"                                             | ''                | "Financial responsibility center"                  | "Financial responsibility center"                | '100'                 |
 			И в таблице 'СтруктураГруппы' я активизирую поле с именем 'СтруктураГруппыВалюта'
 			И в таблице 'СтруктураГруппы' я выбираю текущую строку
 			И в таблице 'СтруктураГруппы' из выпадающего списка с именем 'СтруктураГруппыВалюта' я выбираю точное значение 'RUB'
 		Если в таблице 'СтруктураГруппы' есть строка Тогда
-			| "Company kind" | "Consolidating company\n/ Business unit" | "Primary currency" | "Intercompany transactions exclusion method" | "Relation to group" | "Effective share, %" |
-			| "VA - Package CFR"  | "Earth LLC"                                              | ''                | "CFR"                  | "CFR"                | '100'                 |
+			| "Consolidating company\n/ Business unit" | "Primary currency" | "Intercompany transactions exclusion method" | "Company status for consolidation" | "Effective share, %" |
+			| "Earth LLC"                                              | ''                | "Financial responsibility center"                  | "Financial responsibility center"                | '100'                 |
 			И в таблице 'СтруктураГруппы' я перехожу к строке:
-				| "Company kind" | "Consolidating company\n/ Business unit" | "Primary currency" | "Intercompany transactions exclusion method" | "Relation to group" | "Effective share, %" |
-				| "VA - Package CFR"  | "Earth LLC"                                              | ''                | "CFR"                  | 'ЦФО'                | '100'                 |
+				| "Consolidating company\n/ Business unit" | "Primary currency" | "Intercompany transactions exclusion method" | "Company status for consolidation" | "Effective share, %" |
+				| "Earth LLC"                                              | ''                | "Financial responsibility center"                  | "Financial responsibility center"                | '100'                 |
 			И в таблице 'СтруктураГруппы' я активизирую поле с именем 'СтруктураГруппыВалюта'
 			И в таблице 'СтруктураГруппы' я выбираю текущую строку
 			И в таблице 'СтруктураГруппы' из выпадающего списка с именем 'СтруктураГруппыВалюта' я выбираю точное значение 'RUB'
 		Если в таблице 'СтруктураГруппы' есть строка Тогда
-			| "Company kind" | "Consolidating company\n/ Business unit" | "Primary currency" | "Intercompany transactions exclusion method" | "Relation to group" | "Effective share, %" |
-			| "VA - Package CFR"  | "Mars LLC"                                               | ''                | "CFR"                  | 'ЦФО'                | '100'                 |
+			| "Consolidating company\n/ Business unit" | "Primary currency" | "Intercompany transactions exclusion method" | "Company status for consolidation" | "Effective share, %" |
+			| "Mars LLC"                                               | ''                | "Financial responsibility center"                  | "Financial responsibility center"                | '100'                 |
 			И в таблице 'СтруктураГруппы' я перехожу к строке:
-				| "Company kind" | "Consolidating company\n/ Business unit" | "Primary currency" | "Intercompany transactions exclusion method" | "Relation to group" | "Effective share, %" |
-				| "VA - Package CFR"  | "Mars LLC"                                               | ''                | "CFR"                  | 'ЦФО'                | '100'                 |
+				| "Consolidating company\n/ Business unit" | "Primary currency" | "Intercompany transactions exclusion method" | "Company status for consolidation" | "Effective share, %" |
+				| "Mars LLC"                                               | ''                | "Financial responsibility center"                  | "Financial responsibility center"                | '100'                 |
 			И в таблице 'СтруктураГруппы' я активизирую поле с именем 'СтруктураГруппыВалюта'
 			И в таблице 'СтруктураГруппы' я выбираю текущую строку
 			И в таблице 'СтруктураГруппы' из выпадающего списка с именем 'СтруктураГруппыВалюта' я выбираю точное значение 'RUB'
 
-	* Установим отношение к группе, если его нет
-		Если в таблице 'СтруктураГруппы' есть строка Тогда
-			| "Company kind" | "Consolidating company\n/ Business unit" | "Intercompany transactions exclusion method" | "Primary currency" | "Relation to group"   | "Effective share, %" |
-			| "VA - Package CFR"  | "Mercury LLC"                                           | ''                     | 'RUB'             | ''                     | '100.000'             |
-			И в таблице 'СтруктураГруппы' я перехожу к строке:
-				| "Company kind" | "Consolidating company\n/ Business unit" | "Intercompany transactions exclusion method" | "Primary currency" | "Relation to group"   | "Effective share, %" |
-				| "VA - Package CFR"  | "Mercury LLC"                                           | ''                     | 'RUB'             | ''                     | '100.000'             |
-			И в таблице 'СтруктураГруппы' я активизирую поле с именем 'СтруктураГруппыГруппаКонтрагента'
-			И в таблице 'СтруктураГруппы' я выбираю текущую строку
-			И в таблице 'СтруктураГруппы' из выпадающего списка с именем 'СтруктураГруппыГруппаКонтрагента' я выбираю по строке "VA - Subsidiary"
-			И в таблице 'СтруктураГруппы' я завершаю редактирование строки
+	* Настроим отношение к группе и долю владения 
+		Когда открылось окно '$ЗаголовокОкна$'
+		И в таблице 'СтруктураГруппы' я перехожу к строке:
+			| "Company kind" | "Consolidating company\n/ Business unit" | "Primary currency" | "Effective share, %" |
+			| "VA - Package CFR"  | "Mercury LLC"                                           | 'RUB'             | '100.000'             |
+		И в таблице 'СтруктураГруппы' я активизирую поле с именем 'СтруктураГруппыЭффективнаяДоля'
+		И в таблице 'СтруктураГруппы' я выбираю текущую строку
+		И в таблице 'СтруктураГруппы' в поле с именем 'СтруктураГруппыЭффективнаяДоля' я ввожу текст '50.000'
+		И в таблице 'СтруктураГруппы' я завершаю редактирование строки
+		И в таблице 'СтруктураГруппы' я активизирую поле с именем 'СтруктураГруппыГруппаКонтрагента'
+		И в таблице 'СтруктураГруппы' я выбираю текущую строку
+		И в таблице 'СтруктураГруппы' из выпадающего списка с именем 'СтруктураГруппыГруппаКонтрагента' я выбираю точное значение "VA - Subsidiary"
+		И в таблице 'СтруктураГруппы' я завершаю редактирование строки
+		И в таблице 'СтруктураГруппы' я активизирую поле с именем 'СтруктураГруппыМетодИсключенияВГО'
+		И в таблице 'СтруктураГруппы' я выбираю текущую строку
+		И в таблице 'СтруктураГруппы' из выпадающего списка с именем 'СтруктураГруппыМетодИсключенияВГО' я выбираю точное значение "Balance and turnovers"
+		И в таблице 'СтруктураГруппы' я завершаю редактирование строки				
 				
 	* Протестируем кнопки 'Вверх' и 'Вниз'	
 		И в таблице 'СтруктураГруппы' я перехожу к строке:
-			| "Company kind" | "Consolidating company\n/ Business unit" | "Intercompany transactions exclusion method" | "Primary currency" | "Relation to group" | "Effective share, %" |
-			| "VA - Package CFR"  | "Mars LLC"                                               | "CFR"                  | 'RUB'             | "CFR"                | '100'                 |
+			| "Consolidating company\n/ Business unit" | "Intercompany transactions exclusion method" | "Primary currency" | "Company status for consolidation" | "Effective share, %" |
+			| "Mars LLC"                                               | "Eliminating"        | 'RUB'             | "Eliminating"      | '100'                 |
 		И в таблице 'СтруктураГруппы' я нажимаю на кнопку с именем 'СтруктураГруппыКоманднаяПанельПереместитьВверх'
 		И в таблице 'СтруктураГруппы' я нажимаю на кнопку с именем 'СтруктураГруппыКоманднаяПанельПереместитьВверх'
 		И в таблице 'СтруктураГруппы' я нажимаю на кнопку с именем 'СтруктураГруппыКоманднаяПанельПереместитьВверх'
 		И в таблице 'СтруктураГруппы' я перехожу к строке:
-			| "Company kind" | "Consolidating company\n/ Business unit" | "Intercompany transactions exclusion method" | "Primary currency" | "Relation to group"        | "Effective share, %" |
-			| "VA - Package CFR"  | "Mercury LLC"                                           | ''                     | 'RUB'             | "VA - Subsidiary" | '100.000'             |
+			| "Company kind" | "Consolidating company\n/ Business unit" | "Intercompany transactions exclusion method" | "Primary currency" | "Company status for consolidation"        | "Effective share, %" |
+			| "VA - Package CFR"  | "Mercury LLC"                                           | "Balance and turnovers"    | 'RUB'             | "VA - Subsidiary" | '50.000'              |
 		И в таблице 'СтруктураГруппы' я нажимаю на кнопку с именем 'СтруктураГруппыКоманднаяПанельПереместитьВниз'
 		И в таблице 'СтруктураГруппы' я нажимаю на кнопку с именем 'СтруктураГруппыКоманднаяПанельПереместитьВниз'
 	
@@ -372,8 +376,8 @@
 		* Марс
 			Тогда открылось окно '$ЗаголовокОкна$'
 			И в таблице 'СтруктураГруппы' я перехожу к строке:
-				| "Company kind" | "Consolidating company\n/ Business unit" | "Intercompany transactions exclusion method" | "Primary currency" | "Relation to group" | "Effective share, %" |
-				| "VA - Package CFR"  | "Mars LLC"                                               | "CFR"                  | 'RUB'             | "CFR"                | '100'                 |
+				| "Consolidating company\n/ Business unit" | "Intercompany transactions exclusion method" | "Primary currency" | "Company status for consolidation" | "Effective share, %" |
+				| "Mars LLC"                                               | "Eliminating"        | 'RUB'             | "Eliminating"      | '100'                 |
 			И в таблице 'СтруктураГруппы' я активизирую поле с именем 'СтруктураГруппыДополнительныеВалюты'
 			И в таблице 'СтруктураГруппы' я выбираю текущую строку
 			И в таблице 'СтруктураГруппы' я нажимаю кнопку выбора у реквизита с именем 'СтруктураГруппыДополнительныеВалюты'
@@ -389,8 +393,8 @@
 			Тогда открылось окно '$ЗаголовокОкна$'
 			И в таблице 'СтруктураГруппы' я завершаю редактирование строки
 			И в таблице 'СтруктураГруппы' я перехожу к строке:
-				| "Company kind" | "Consolidating company\n/ Business unit" | "Intercompany transactions exclusion method" | "Primary currency" | "Relation to group"        | "Effective share, %" |
-				| "VA - Package CFR"  | "Mercury LLC"                                           | ''                     | 'RUB'             | "VA - Subsidiary" | '100.000'             |
+				| "Company kind" | "Consolidating company\n/ Business unit" | "Intercompany transactions exclusion method" | "Primary currency" | "Company status for consolidation"        | "Effective share, %" |
+				| "VA - Package CFR"  | "Mercury LLC"                                           | "Balance and turnovers"    | 'RUB'             | "VA - Subsidiary" | '50.000'              |
 			И в таблице 'СтруктураГруппы' я выбираю текущую строку
 			И в таблице 'СтруктураГруппы' я нажимаю кнопку выбора у реквизита с именем 'СтруктураГруппыДополнительныеВалюты'
 			Тогда открылось окно "Currency list"
@@ -405,8 +409,8 @@
 			Тогда открылось окно '$ЗаголовокОкна$'
 			И в таблице 'СтруктураГруппы' я завершаю редактирование строки
 			И в таблице 'СтруктураГруппы' я перехожу к строке:
-				| "Company kind" | "Consolidating company\n/ Business unit" | "Intercompany transactions exclusion method" | "Primary currency" | "Relation to group" | "Effective share, %" |
-				| "VA - Package CFR"  | "Venus LLC"                                             | "CFR"                  | 'RUB'             | "CFR"                | '100'                 |
+				| "Consolidating company\n/ Business unit" | "Intercompany transactions exclusion method" | "Primary currency" | "Company status for consolidation" | "Effective share, %" |
+				| "Venus LLC"                                             | "Financial responsibility center"                  | 'RUB'             | "Financial responsibility center"                | '100'                 |
 			И в таблице 'СтруктураГруппы' я выбираю текущую строку
 			И в таблице 'СтруктураГруппы' я нажимаю кнопку выбора у реквизита с именем 'СтруктураГруппыДополнительныеВалюты'
 			Тогда открылось окно "Currency list"
@@ -421,8 +425,8 @@
 			Тогда открылось окно '$ЗаголовокОкна$'
 			И в таблице 'СтруктураГруппы' я завершаю редактирование строки
 			И в таблице 'СтруктураГруппы' я перехожу к строке:
-				| "Company kind" | "Consolidating company\n/ Business unit" | "Intercompany transactions exclusion method" | "Primary currency" | "Relation to group" | "Effective share, %" |
-				| "VA - Package CFR"  | "Earth LLC"                                              | "CFR"                  | 'RUB'             | "CFR"                | '100'                 |
+				| "Consolidating company\n/ Business unit" | "Intercompany transactions exclusion method" | "Primary currency" | "Company status for consolidation" | "Effective share, %" |
+				| "Earth LLC"                                              | "Financial responsibility center"                  | 'RUB'             | "Financial responsibility center"                | '100'                 |
 			И в таблице 'СтруктураГруппы' я выбираю текущую строку
 			И в таблице 'СтруктураГруппы' я нажимаю кнопку выбора у реквизита с именем 'СтруктураГруппыДополнительныеВалюты'
 			Тогда открылось окно "Currency list"
@@ -433,7 +437,7 @@
 			Тогда открылось окно '$ЗаголовокОкна$'
 			И в таблице 'СтруктураГруппы' я завершаю редактирование строки
 			И я нажимаю на кнопку с именем 'ФормаЗаписатьИЗакрыть'
-			И я жду закрытия окна '$ЗаголовокОкна$' в течение 20 секунд	
+			И я жду закрытия окна '$ЗаголовокОкна$' в течение 20 секунд
 	
 Сценарий: 00.09 Создание документа Управление отчетным периодом
 
@@ -455,8 +459,8 @@
 		И из выпадающего списка с именем 'ВерсияОрганизационнойСтруктуры' я выбираю по строке "VA - Main regulations"	
 		И я устанавливаю флаг с именем 'УстановкаЛимитов'
 		И я нажимаю на кнопку с именем 'ОткрытьВидыОтчетовДляУстановкиЛимитов'
-		Тогда открылось окно "Kinds of reports for limit setting"
-		И Я закрываю окно "Kinds of reports for limit setting"
+		Тогда открылось окно "Types of reports for limit setting"
+		И Я закрываю окно "Types of reports for limit setting"
 		Тогда открылось окно "Reporting period management (create) *"
 		И я снимаю флаг с именем 'УстановкаЛимитов'
 		И я нажимаю на кнопку с именем 'ФормаВперед'
@@ -567,13 +571,13 @@
 		Тогда открылось окно '$ЗаголовокОкна$'
 		* Блокируем период
 			И я нажимаю на кнопку с именем 'УправлениеПериодами1'
-			Когда открылось окно "Managing period lock boundary and indicator updates"
+			Когда открылось окно "Manage period lock duration and indicator updates"
 			И в табличном документе 'ПолеТабличногоДокументаУправлениеПериодами' я перехожу к ячейке "R5C2:R5C4"
 			И я нажимаю на кнопку с именем 'ЗакрытьПериод'
 			И я нажимаю на кнопку с именем 'ОткрытьПериод'
 			И в табличном документе 'ПолеТабличногоДокументаУправлениеПериодами' я перехожу к ячейке "R5C2:R5C3"
 			И я нажимаю на кнопку с именем 'ЗакрытьПериод'
-			И Я закрываю окно "Managing period lock boundary and indicator updates"
+			И Я закрываю окно "Manage period lock duration and indicator updates"
 		Тогда открылось окно '$ЗаголовокОкна$'
 		И я нажимаю на кнопку с именем 'ФормаВперед'
 		И я нажимаю на кнопку с именем 'КнопкаУдалениеВерсий'
@@ -966,11 +970,11 @@
 
 Сценарий: 00.17 Создание Статьей доходов и расходов
 
-	И Я создаю группу статей ДиР с именем 'ВА - Статьи доходов и расходов'
-	И Я создаю статью ДиР с именем "3Software sale" родителем 'ВА - Статьи доходов и расходов'
-	И Я создаю статью ДиР с именем "2Software implementation" родителем 'ВА - Статьи доходов и расходов'
+	И Я создаю группу статей ДиР с именем "VA - Income and expense items"
+	И Я создаю статью ДиР с именем "3Software sale" родителем "VA - Income and expense items"
+	И Я создаю статью ДиР с именем "2Software implementation" родителем "VA - Income and expense items"
 
-Сценарий: 00.18 Создание документа 'Отражение фактических данных'
+Сценарий: 00.18 Создание документа "Отражение фактических данных"
 
 	Если 'НЕ $$ЭтоPerform$$' Тогда
 
@@ -1054,7 +1058,7 @@
 						| '2' | "2Software implementation"  | ''                        | 'Приход'        | 'Безналичная'          | 'ООО "Ганимед"'                      | ''           | 'Ганимед-002 от 01.01.2021' | ''           | ''           | ''           | ''           | ''           | '2,340,000.00'     | '2,340,000.00' |
 				Если '$$ЭтоЕРПУХ$$' Тогда
 					Тогда таблица 'ФактПоБюджетам' стала равной:
-						| 'Документ планирования' | 'N' | 'Аналитика2' | 'Предназначение'                   | 'ЦФО'          | 'Аналитика4' | 'Статья бюджета'                   | 'Аналитика1' | 'Аналитика3' | 'Аналитика5' | 'Аналитика6' | 'Проект'               | "Document регистратор" | 'Валюта' | "Income expense" | 'Сумма'        | "Amount упр"    | 'Количество' |
+						| 'Документ планирования' | 'N' | 'Аналитика2' | 'Предназначение'                   | "Financial responsibility center"          | 'Аналитика4' | 'Статья бюджета'                   | 'Аналитика1' | 'Аналитика3' | 'Аналитика5' | 'Аналитика6' | 'Проект'               | "Document регистратор" | 'Валюта' | "Income expense" | 'Сумма'        | "Amount упр"    | 'Количество' |
 						| ''                      | '1' | ''           | 'Бюджет движения денежных средств' | "Mercury LLC" | ''           | "3Software sale" | ''           | ''           | ''           | ''           | "VA - Main project" | ''                     | 'RUB'    | ''              | '780,000.00'   | '780,000.00'   | ''           |
 						| ''                      | '2' | ''           | 'Бюджет движения денежных средств' | "Mercury LLC" | ''           | "2Software implementation"  | ''           | ''           | ''           | ''           | "VA - Main project" | ''                     | 'RUB'    | ''              | '2,340,000.00' | '2,340,000.00' | ''           |
 

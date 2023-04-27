@@ -7,11 +7,11 @@
 		
 Сценарий: Я нахожу в списке вид отчета с именем 'TheReportKindDescription'
 
-	И В командном интерфейсе я выбираю "Budgeting, reporting, and analysis" "Report kinds and templates"
-	Тогда открылось окно "Report kinds and templates"
+	И В командном интерфейсе я выбираю "Budgeting, reporting, and analysis" "Report types and templates"
+	Тогда открылось окно "Report types and templates"
 	И в таблице 'СписокВидовОтчетов' я нажимаю на кнопку с именем 'СписокВидовОтчетовНайти'
 	Тогда открылась форма с именем 'UniversalListFindExtForm'
-	И из выпадающего списка с именем 'FieldSelector' я выбираю точное значение "Report kind"
+	И из выпадающего списка с именем 'FieldSelector' я выбираю точное значение "Report type"
 	И я меняю значение переключателя с именем 'CompareType' на "Anywhere in the line"
 	И в поле с именем 'Pattern' я ввожу текст '[TheReportKindDescription]'
 	И я нажимаю на кнопку с именем 'Find'
@@ -68,7 +68,7 @@
 
 Сценарий: Открылся бланк для вида отчета 'TheReportKind'
 
-	И открылось окно "Template [TheReportKind] report kind: [TheReportKind]*"
+	И открылось окно "Template [TheReportKind] report type: [TheReportKind]*"
 
 Сценарий: Открылся бланк сводной таблицы для вида отчета 'TheReportKind'
 
@@ -111,3 +111,9 @@
 		Тогда открылось окно "Report indicators"
 		И в таблице 'Список' я выбираю текущую строку
 				
+Сценарий: В конструкторе отчета я нажимаю кнопку контекстного меню с именем 'TheName'
+
+	Если '$$ЭтоPerform$$' Тогда
+		И я нажимаю на кнопку с именем '[TheName]'
+	Иначе
+		И я выбираю пункт контекстного меню с именем '[TheName]' на элементе формы с именем 'ПолеТабличногоДокументаМакет'

@@ -151,8 +151,8 @@
 		Тогда Таблица 'ТаблицаСоответствия' содержит '3' строк из списка:
 			| "Destination dimension"       | "Filling method" | "Column name"    | "Dimension kind" |
 			| "Dimension 1: Product range" | "Source field"    | '[Номенклатура]' | "Product range"  |
-			| 'Значение'                  | "Source field"    | '[Цена]'         | ''              |
-			| 'Период'                    | "Source field"    | '[Дата]'         | ''              |
+			| "Value"                  | "Source field"    | '[Цена]'         | ''              |
+			| "Period"                    | "Source field"    | '[Дата]'         | ''              |
 		И я перехожу к закладке с именем 'СтраницаОтборы'
 		Когда открылось окно "Data source (create) *"
 		Тогда Таблица 'ДеревоПараметровОтбораБД' содержит '3' строк из списка:
@@ -289,7 +289,7 @@
 		Тогда Таблица 'ТаблицаСоответствия' содержит '2' строк из списка:	
 			| "Destination dimension"       | "Filling method" | "Column name"    | "Dimension kind" |
 			| "Dimension 1: Product range" | "Source field"    | '[Номенклатура]' | "Product range"  |
-			| 'Значение'                  | "Source field"    | '[Цена]'         | ''              |
+			| "Value"                  | "Source field"    | '[Цена]'         | ''              |
 		И я перехожу к закладке с именем 'СтраницаОтборы'
 		Когда открылось окно '$ЗаголовокОкна$'
 		Тогда Таблица 'ДеревоПараметровОтбораБД' содержит '3' строк из списка:
