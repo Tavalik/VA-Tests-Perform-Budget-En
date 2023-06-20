@@ -17,13 +17,13 @@
 
 	Пусть Инициализация переменных
 
-Сценарий: 06.01 Создание группы отчетов "VA - Analysts from other sources (группа)"
+Сценарий: 06.01 Создание группы отчетов "VA - Analysts from other sources (group)"
 
-	И Я создаю группу видов отчетов с именем "VA - Analysts from other sources (группа)" и родителем "VA - Report group"
+	И Я создаю группу видов отчетов с именем "VA - Analysts from other sources (group)" и родителем "VA - Report group"
 
 Сценарий: 06.02 Создание вида отчета "VA - Data to add analytics"	
 
-	И Я создаю вид отчета с именем "VA - Data to add analytics" и родителем "VA - Analysts from other sources (группа)"
+	И Я создаю вид отчета с именем "VA - Data to add analytics" и родителем "VA - Analysts from other sources (group)"
 	И Я открываю вид отчета с именем "VA - Data to add analytics"
 	И я перехожу к закладке с именем 'АналитикиОтчета'
 	И из выпадающего списка с именем 'ВидАналитики1' я выбираю по строке "VA0ProCate"				
@@ -39,7 +39,7 @@
 	И Я в конструкторе отчета добавляю аналитику с кодом "VA0CFItems" в ячейку 'R2C3'
 	И Я в конструкторе отчета добавляю аналитику с кодом "VA0Product" в ячейку 'R3C3'
 
-	И Я Для вида отчета "VA - Data to add analytics" я создаю бланк по умолчанию
+	И Я Для вида отчета "VA - Data to add analytics" создаю бланк по умолчанию
 
 Сценарий: 06.03 Создание экзмемпляра отчета "VA - Data to add analytics"
 
@@ -81,7 +81,7 @@
 
 Сценарий: 06.04 Создание вида отчета "VA - Analysts from fields of other sources"
 
-	И Я создаю вид отчета с именем "VA - Analysts from fields of other sources" и родителем "VA - Analysts from other sources (группа)"
+	И Я создаю вид отчета с именем "VA - Analysts from fields of other sources" и родителем "VA - Analysts from other sources (group)"
 	И Я открываю вид отчета с именем "VA - Analysts from fields of other sources"
 	И я перехожу к закладке с именем 'АналитикиОтчета'
 	И из выпадающего списка с именем 'ВидАналитики1' я выбираю по строке "VA0ProCate"				
@@ -197,8 +197,8 @@
 				И в таблице 'ТаблицаСоответствия' я выбираю текущую строку
 				Когда открылось окно "Data sources"
 				И в таблице 'Список' я перехожу к строке:
-					| "Description"                                          | "Receipt method"                                 | "Infobase type"                      | "Indicator filter"  |
-					| "VA - Data to add analytics_Goods quantity" | "Current infobase report indicator (easy setup)" | 'Текущая информационная база' | "Goods quantity" |
+					| "Description"                                          | "Receipt method"                                 | "Indicator filter"  |
+					| "VA - Data to add analytics_Goods quantity" | "Current infobase report indicator (easy setup)" | "Goods quantity" |
 				И в таблице 'Список' я выбираю текущую строку				
 				Тогда открылось окно "Data source (create)*"
 				И я нажимаю на кнопку с именем 'ФормаЗаписатьИЗакрыть'
@@ -399,7 +399,7 @@
 					И в поле с именем 'ПолеТекстовогоДокументаПроцедура' я ввожу текст 'Result = Max([InformationRegister_ProRanPri_Price_], 1500000)' 
 				И я нажимаю на кнопку с именем 'ЗаписатьИСвернуть'
 	
-	И Я Для вида отчета "VA - Analysts from fields of other sources" я создаю бланк по умолчанию
+	И Я Для вида отчета "VA - Analysts from fields of other sources" создаю бланк по умолчанию
 	И Я Для вида отчета "VA - Analysts from fields of other sources" в бланке для группы раскрытия с адресом 'R8C1' задаю сортировку "Product range" "Product ID"
 	И Я Для вида отчета "VA - Analysts from fields of other sources" в бланке для группы раскрытия с адресом 'R10C1' задаю сортировку "Product range" "Product ID"
 	И Я Для вида отчета "VA - Analysts from fields of other sources" в бланке для группы раскрытия с адресом 'R13C1' меняю сортировку "Product range" "Description" на сортировку "Product range" "Product ID"
