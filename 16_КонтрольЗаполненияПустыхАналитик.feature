@@ -120,7 +120,7 @@
 			И я нажимаю на кнопку с именем 'ДобавитьОперанд1'
 			Тогда открылось окно "Data sources"
 			И я выбираю пункт контекстного меню с именем 'СписокКонтекстноеМенюИзменить' на элементе формы с именем 'Список'
-			Тогда открылось окно "VA - Пустые аналитики_Source number (Data source)"
+			Тогда открылось окно "VA - Empty analytics_Source number (Data source)"
 			И в таблице 'ТаблицаСоответствия' я перехожу к строке:
 				| "Destination dimension"             | "Dimension kind"      | "Column name"                       | "Filling method" |
 				| "Dimension 3: Product categories" | "Product categories" | "[Dimension 3: Product categories]" | "Source field"    |
@@ -129,7 +129,7 @@
 			И в таблице 'ТаблицаСоответствия' из выпадающего списка с именем 'ТаблицаСоответствияСпособЗаполнения' я выбираю точное значение "Fixed value"
 			И в таблице 'ТаблицаСоответствия' я завершаю редактирование строки
 			И я нажимаю на кнопку с именем 'ФормаЗаписатьИЗакрыть'
-			И я жду закрытия окна "VA - Пустые аналитики_Source number (Data source) *" в течение 20 секунд
+			И я жду закрытия окна "VA - Empty analytics_Source number (Data source) *" в течение 20 секунд
 			Тогда открылось окно "Data sources"
 			И Я закрываю окно "Data sources"
 			Тогда открылось окно "Edit tree"
@@ -140,7 +140,7 @@
 			И я нажимаю на кнопку с именем 'ДобавитьОперанд1'
 			Тогда открылось окно "Data sources"
 			И я выбираю пункт контекстного меню с именем 'СписокКонтекстноеМенюИзменить' на элементе формы с именем 'Список'
-			Тогда открылось окно "VA - Пустые аналитики_Source date (Data source)"
+			Тогда открылось окно "VA - Empty analytics_Source date (Data source)"
 			И в таблице 'ТаблицаСоответствия' я перехожу к строке:
 				| "Destination dimension"             | "Dimension kind"      | "Column name"                       | "Filling method" |
 				| "Dimension 3: Product categories" | "Product categories" | "[Dimension 3: Product categories]" | "Source field"    |
@@ -149,7 +149,7 @@
 			И в таблице 'ТаблицаСоответствия' из выпадающего списка с именем 'ТаблицаСоответствияСпособЗаполнения' я выбираю точное значение "Fixed value"
 			И в таблице 'ТаблицаСоответствия' я завершаю редактирование строки
 			И я нажимаю на кнопку с именем 'ФормаЗаписатьИЗакрыть'
-			И я жду закрытия окна "VA - Пустые аналитики_Source date (Data source) *" в течение 20 секунд
+			И я жду закрытия окна "VA - Empty analytics_Source date (Data source) *" в течение 20 секунд
 			Тогда открылось окно "Data sources"
 			И Я закрываю окно "Data sources"
 			Тогда открылось окно "Edit tree"
@@ -160,7 +160,7 @@
 			И я нажимаю на кнопку с именем 'ДобавитьОперанд1'
 			Тогда открылось окно "Data sources"
 			И я выбираю пункт контекстного меню с именем 'СписокКонтекстноеМенюИзменить' на элементе формы с именем 'Список'
-			Тогда открылось окно "VA - Пустые аналитики_Source number (Data source)"
+			Тогда открылось окно "VA - Empty analytics_Source number (Data source)"
 			И в таблице 'ТаблицаСоответствия' я перехожу к строке:
 				| "Destination dimension"             | "Dimension kind"      | "Column name"                       | "Filling method" |
 				| "Dimension 3: Product categories" | "Product categories" | "[Dimension 3: Product categories]" | "Source field"    |
@@ -169,7 +169,7 @@
 			И в таблице 'ТаблицаСоответствия' из выпадающего списка с именем 'ТаблицаСоответствияСпособЗаполнения' я выбираю точное значение "Fixed value"
 			И в таблице 'ТаблицаСоответствия' я завершаю редактирование строки
 			И я нажимаю на кнопку с именем 'ФормаЗаписатьИЗакрыть'
-			И я жду закрытия окна "VA - Пустые аналитики_Source number (Data source) *" в течение 20 секунд
+			И я жду закрытия окна "VA - Empty analytics_Source number (Data source) *" в течение 20 секунд
 			Тогда открылось окно "Data sources"
 			И Я закрываю окно "Data sources"
 			Тогда открылось окно "Edit tree"
@@ -180,7 +180,7 @@
 			И я нажимаю на кнопку с именем 'ДобавитьОперанд1'
 			Тогда открылось окно "Data sources"
 			И я выбираю пункт контекстного меню с именем 'СписокКонтекстноеМенюИзменить' на элементе формы с именем 'Список'
-			Тогда открылось окно "VA - Пустые аналитики_Source date (Data source)"
+			Тогда открылось окно "VA - Empty analytics_Source date (Data source)"
 			И в таблице 'ТаблицаСоответствия' я перехожу к строке:
 				| "Destination dimension"             | "Dimension kind"      | "Column name"                       | "Filling method" |
 				| "Dimension 3: Product categories" | "Product categories" | "[Dimension 3: Product categories]" | "Source field"    |
@@ -189,7 +189,7 @@
 			И в таблице 'ТаблицаСоответствия' из выпадающего списка с именем 'ТаблицаСоответствияСпособЗаполнения' я выбираю точное значение "Fixed value"
 			И в таблице 'ТаблицаСоответствия' я завершаю редактирование строки
 			И я нажимаю на кнопку с именем 'ФормаЗаписатьИЗакрыть'
-			И я жду закрытия окна "VA - Пустые аналитики_Source date (Data source) *" в течение 20 секунд
+			И я жду закрытия окна "VA - Empty analytics_Source date (Data source) *" в течение 20 секунд
 			Тогда открылось окно "Data sources"
 			И Я закрываю окно "Data sources"
 			Тогда открылось окно "Edit tree"
